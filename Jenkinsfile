@@ -23,6 +23,7 @@ pipeline {
 		stage('Reading environment variable defined in groovy file') {
             steps {
 				script {
+					sh 'ls -lrth'
 					load "./env.groovy"
 					echo "${env.BUILD_ON}"
 					echo "${env.SKYPE_TEST_CASES}"
