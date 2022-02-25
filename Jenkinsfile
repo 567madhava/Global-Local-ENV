@@ -21,17 +21,6 @@ pipeline {
             }
         }
 		stage('Reading environment variable defined in groovy file') {
-            /*steps {
-				script {
-					sh 'ls -lrth'
-					load "./env.groovy"
-					echo "${env.BUILD_ON}"
-					echo "${env.SKYPE_TEST_CASES}"
-					echo "${env.REMOTE_SERVERS}"
-					echo "${env.MAVEN_VERSION}"
-				}
-			}*/	
-					
 			environment {
                 // environment variables would be initialized in the script file
                 LS = "${sh(script: 'chmod +x ./env_values.sh; ./env_values.sh', returnStdout: true).trim()}"
