@@ -3,6 +3,8 @@ pipeline {
     agent any
     environment {
         DEMO_NUMBER = 'DEMO-1.1'
+        build_for = 'PROD'
+        remote_server = '10.10.10.10'
     }
 
     stages {
@@ -19,6 +21,9 @@ pipeline {
                     load "./env.groovy"
                     echo "${env.env_var1}"
                     echo "${env.env_var2}"
+                    echo "${env.build_for}"
+                    echo "${env.remote_server}"
+                    
                 }
             }
         }
