@@ -1,4 +1,5 @@
-pipeline {
+pipeline { 
+  
 	agent any
 	
 	environment {
@@ -6,12 +7,12 @@ pipeline {
 		SKYPE_TEST_CASES = "TRUE"
 		REMOTE_SERVERS = '0.0.0.10'
 		MAVEN_VERSION = '2.0.0'
-	}
+    }
 
 	stages {
 		stage("1-Env Variables") {
             steps {
-            	sh "printenv"
+                sh "printenv"
             }
 		}
         stage('stage-1') {
@@ -20,9 +21,13 @@ pipeline {
             }
         }
 		stage('Reading environment variable defined in groovy file') {
+			environment {
+                // environment variables would be initialized in the script file
+                LS = "${sh(script: 'chmod +x ./env_values.sh; ./env_values.sh', returnStdout: true).trim()}"
+            }
 			steps {
                 echo "Th is first demo piple $BUILD_NUMBER"
-			}
+            }
 		}
         stage("2-Env Variables") {
             steps {
