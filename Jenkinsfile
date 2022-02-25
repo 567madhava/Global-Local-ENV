@@ -3,8 +3,8 @@ pipeline {
     agent any
     environment {
         DEMO_NUMBER = 'DEMO-1.1'
-        build_for = 'PROD'
-        remote_server = '10.10.10.10'
+        //build_for = 'PROD'
+        //remote_server = '10.10.10.10'
     }
 
     stages {
