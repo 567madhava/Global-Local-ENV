@@ -1,35 +1,29 @@
-pipeline { 
-  
-	agent any
-	
-	environment {
-		BUILD_ON = "PROD"
-		SKYPE_TEST_CASES = "TRUE"
-		REMOTE_SERVERS = '0.0.0.10'
-		MAVEN_VERSION = '2.0.0'
+pipeline {
+
+    agent any
+    environment {
+        DEMO_NUMBER = 'DEMO-1.1'
     }
 
-	stages {
-		stage("1-Env Variables") {
+    stages {
+
+        stage("Env Variables") {
             steps {
                 sh "printenv"
             }
-		}
-        stage('stage-1') {
+        }
+
+        stage('Reading environment variable defined in groovy file') {
             steps {
-                echo "This is first demo piple $BUILD_NUMBER"
+                script {
+                    load "./pipeline/basics/extenvvariable/env.groovy"
+                    echo "${env.env_var1}"
+                    echo "${env.env_var2}"
+                }
             }
         }
-		stage('Reading environment variable defined in groovy file') {
-			environment {
-                // environment variables would be initialized in the script file
-                LS = "${sh(script: 'chmod +x ./env_values.sh; ./env_values.sh', returnStdout: true).trim()}"
-            }
-			steps {
-                echo "Th is first demo piple $BUILD_NUMBER"
-            }
-		}
-        stage("2-Env Variables") {
+
+        stage("Env Variables print") {
             steps {
                 sh "printenv"
             }
