@@ -17,7 +17,7 @@ pipeline {
 		}
         stage('stage-1') {
             steps {
-                echo "This is first demo piple $BUILD_NUMBER and $DEMO_NUMBER"
+                echo "This is first demo piple $BUILD_NUMBER"
             }
         }
 		stage('Reading environment variable defined in groovy file') {
