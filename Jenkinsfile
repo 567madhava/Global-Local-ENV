@@ -20,9 +20,9 @@ pipeline {
             }
         }
 		stage('Reading environment variable defined in groovy file') {
-			environment {
-                LS = "${sh(script: 'chmod +x ./env_values.sh; ./env_values.sh', returnStdout: true).trim()}"
-            }
+			steps {
+                echo "Th is first demo piple $BUILD_NUMBER"
+			}
 		}
         stage("2-Env Variables") {
             steps {
