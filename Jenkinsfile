@@ -8,7 +8,7 @@ pipeline {
         remote = '2.2.2.2'
     }
     tools {
-        mvn "mvn3.8.4"
+        maven 'mvn3.8.4'
     }
 
     stages {
@@ -16,12 +16,12 @@ pipeline {
         stage("Env Variables") {
             steps {
                 //sh "printenv"
-                echo "${env.maven}"
-                echo "$maven"
+                //echo "${env.maven}"
+                //echo "$maven"
                 
-                echo "${env.java}"
-                echo "$java"
-                sh ' mvn --version '
+                //echo "${env.java}"
+                //echo "$java"
+                sh " mvn --version "
                 
             }
         }
