@@ -8,8 +8,8 @@ pipeline {
         remote = '2.2.2.2'
     }
     tools {
-        maven 'mvn3'
-        java 'java10'
+        maven "mvn3"
+        java "java10"
     }
 
     stages {
