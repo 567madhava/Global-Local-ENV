@@ -15,6 +15,10 @@ pipeline {
                 //sh "printenv"
                 echo "${env.JAVA_HOME}"
                 echo "$JAVA_HOME"
+                
+                echo "${env.mvn}"
+                echo "$mvn"
+                
             }
         }
 
