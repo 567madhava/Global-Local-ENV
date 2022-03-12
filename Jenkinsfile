@@ -12,7 +12,7 @@ pipeline {
 
         stage("Env Variables") {
             steps {
-                sh "echo "HI" "
+                sh 'echo "HI" '
             }
         }
 
@@ -34,7 +34,7 @@ pipeline {
 
         stage("Env Variables print") {
             steps {
-                sh "echo "HI-2" "
+                sh 'echo "HI-2" '
             }
         }
     }
