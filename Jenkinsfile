@@ -8,7 +8,8 @@ pipeline {
         remote = '2.2.2.2'
     }
     tools {
-        maven 'mvn3.8.4'
+        //maven 'mvn3.8.4'
+        maven 'mvn3.6.0'
     }
 
     stages {
