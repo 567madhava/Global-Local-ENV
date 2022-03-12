@@ -9,7 +9,7 @@ pipeline {
     }
     tools {
         maven "mvn3"
-        java "java10"
+        jdk "java10"
     }
 
     stages {
