@@ -4,7 +4,8 @@ pipeline {
     environment {
         DEMO_NUMBER = 'DEMO-1.1'
         //build_for = 'PROD'
-        remote_server = '10.10.10.10'
+        remote_server = '1.1.1.1'
+        remote = '2.2.2.2'
     }
 
     stages {
@@ -24,6 +25,8 @@ pipeline {
                     echo "${env.build_for}"
                     echo "${env.remote_server}"
                     echo "$remote_server"
+                    echo "${env.remote}"
+                    echo "$remote"
                     
                 }
             }
