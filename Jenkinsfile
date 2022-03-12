@@ -12,7 +12,9 @@ pipeline {
 
         stage("Env Variables") {
             steps {
-                sh "printenv"
+                //sh "printenv"
+                echo "${env.JAVA_HOME}"
+                echo "$JAVA_HOME"
             }
         }
 
@@ -34,7 +36,8 @@ pipeline {
 
         stage("Env Variables print") {
             steps {
-                sh "printenv"
+                //sh "printenv"
+                sh 'echo "HI"'
             }
         }
     }
