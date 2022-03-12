@@ -21,7 +21,7 @@ pipeline {
                 
                 echo "${env.java}"
                 echo "$java"
-                mvn --version
+                sh ' mvn --version '
                 
             }
         }
