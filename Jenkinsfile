@@ -5,7 +5,7 @@ pipeline {
         DEMO_NUMBER = 'DEMO-1.1'
         //build_for = 'PROD'
         remote_server = '1.1.1.1'
-        //remote = '2.2.2.2'
+        remote = '2.2.2.2'
     }
     tools {
         //maven 'mvn3.8.4'
