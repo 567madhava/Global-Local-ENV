@@ -7,17 +7,20 @@ pipeline {
         remote_server = '1.1.1.1'
         remote = '2.2.2.2'
     }
+    tool {
+        maven 'mvn3'
+        java 'java10'
 
     stages {
 
         stage("Env Variables") {
             steps {
                 //sh "printenv"
-                echo "${env.JAVA_HOME}"
-                echo "$JAVA_HOME"
+                echo "${env.maven}"
+                echo "$maven"
                 
-                echo "${env.mvn}"
-                echo "$mvn"
+                echo "${env.java}"
+                echo "$java"
                 
             }
         }
