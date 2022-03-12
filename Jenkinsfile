@@ -7,7 +7,7 @@ pipeline {
         remote_server = '1.1.1.1'
         remote = '2.2.2.2'
     }
-    tool {
+    tools {
         maven 'mvn3'
         java 'java10'
     }
