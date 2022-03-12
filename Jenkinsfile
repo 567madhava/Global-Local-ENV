@@ -45,6 +45,7 @@ pipeline {
 
         stage("Env Variables print") {
             steps {
+                echo "$remote"
                 script {
                     echo "$remote"
                 }
